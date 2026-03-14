@@ -266,6 +266,135 @@ main{
     width: 100%;
 }
 
+@media (width >= 576px){
+    
+    
+    body{
+        display: grid;
+        grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer";
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+    
+    header{
+        grid-area: header;
+        display: flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.8);backdrop-filter: blur(10px);
+    }
+    
+    .navbar{
+        display: flex;
+    }
+    
+    .nav-links{
+        display: flex;
+    }
+    
+    .menu-btn{
+        display: none;
+    }
+
+    .search-mobile{
+        display: none;
+    }
+
+    .nav-links ul{
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        align-items: center;
+    }
+
+    .nav-links a{
+        text-decoration: none;
+        color: var(--text);
+        font-size: 0.9rem;
+        display: inline-block;
+        transition: 0.3s ease;
+    }
+
+    .nav-links a:hover{
+        color: var(--dorado);
+        transform: translateY(-3px);
+    }
+
+    aside{
+        grid-area: aside;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: sticky;
+        top: 100px;
+        height: calc(100vh - 112px);
+        align-self: start;
+        padding: 40px 0;
+        border-right: 1px solid rgba(184, 149, 80, 0.15);
+        border-radius: 30px;
+    }
+
+    .search-desktop{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search-desktop ul{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        list-style: none;
+    }
+
+    .search-desktop a{
+        text-decoration: none;
+        color: var(--text);
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        display: inline-block;
+        padding: 5px 0;
+    }
+
+    .search-desktop a:hover{
+        color: var(--dorado);
+        transform: translatex(-5px);
+    }
+
+    main{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        padding: 40px;
+    }
+
+    .watch-card{
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .img-wrapper{
+        height: 450px;
+    }
+
+    .footer-section{
+        grid-area: footer;
+        grid-column: 1 / -1;
+        width: 100%;
+        z-index: 10;
+    }
+
+}
+
 
 
 
